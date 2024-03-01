@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --bg-color: rgba(15,15,15,0.95);
+    --tshadow-color: 0 0 3px rgba(0,0,0,1);
+    --bshadow-color: 0 0 75px 5px rgba(85,85,85,0.65); 
+    --light-tshadow: 0 0 2px rgba(255,255,255,1);
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--bg-color);
+    color: white;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 1350px;
+    max-width: 80%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    height: 6rem;
+    position: relative;
+    z-index: 10;
+    backdrop-filter: blur(1px);
+}
+
+/*Header-Left and Nav Styling*/
+.icons{
+    user-select: none;
+}
+.header-left nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    margin-right: 2rem;
+    text-shadow: var(--tshadow-color);
+}
+
+/*Header Right Styling*/
+.material-symbols-outlined{
+    margin: 0 2px;
+    font-size: 1.75rem;
+}
+
+.header-right{
+    display: flex;
+    align-items: center;
+}
+
+.header-right div{
+    margin-left: 2rem;
+}
+
+.search-bar, .location-bar{
+    display: flex;
+    align-items: center;
+    padding: .25rem .12rem .15rem 1rem;
+    border: 1px solid white;
+    border-radius: 125px;
+}
+.search-bar input, .location-bar select{
+    width: 125%;
+    font-size: 1.1em;
+    padding: 0.35rem 0;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+}
+.location-bar select option{
+    color: black;
+}
+
+.login-button button{
+    background-color: none;
+    border: 1px solid white;
+    border-radius: 2px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    letter-spacing: 3px;
+    background-color: transparent;
+    color: white;
+    outline: none;
+}
+
+.menu{
+    font-size: 3rem;
+}
+
+
+/* Carousel Styling */
+.carousel{
+    width: 100vw;
+    height: 100vh;
+    margin-top: -6rem;
+    position: relative;
+    overflow: hidden;
+}
+.carousel .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+}
+.carousel .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(.75);
+}
+.carousel .list .item .desc{
+    position: absolute;
+    top: 20%;
+    width: 1350px;
+    max-width: 80%;
+    right: 0;
+    transform: translateX(40%);
+    padding: 1rem 50% 1rem 0;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(.5px);
+}
+.carousel .list .item .desc .sign{
+    letter-spacing: .75rem;
+    font-weight: bolder;
+    font-size: 1.25rem;
+    text-shadow: var(--tshadow-color);
+}
+
+.carousel .list .item .desc .heading{
+    margin-bottom: px;
+    font-size: 3rem;
+    text-shadow: var(--tshadow-color);
+}
+
+.carousel .list .item .desc .movie{
+    color: rgb(179, 0, 0);
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 4rem;
+    text-shadow: var(--tshadow-color);
+}
+
+.carousel .list .item .desc .content{
+    margin-top: .5rem;
+    text-shadow: var(--tshadow-color);
+}
+
+.carousel .list .item .desc .buttons{
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.75rem;
+}
+
+.carousel .list .item .desc .buttons button{
+    border: none;
+    letter-spacing: 3px;
+    font-family: Poppins;
+    padding: 1rem 2rem;
+    border: 1px solid white;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.carousel .list .item .desc .buttons button:nth-child(2){
+    background-color: transparent;
+    color: white;
+}
+
+/* Thumbnail List Styling */
+.thumbnail{
+    position: absolute;
+    bottom: 5rem;
+    left: 1.5rem;
+    width: max-content;
+    z-index: 50;
+    display: flex;
+    gap: 1.5rem;
+}
+.thumbnail .item{
+    width: 9rem;
+    height: 12rem;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: var(--bshadow-color);
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.thumbnail .item .content{
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    backdrop-filter: blur(1px);
+    box-shadow: var(--bshadow-color);
+}
+
+.thumbnail .item .content .title{
+    font-weight: bold;
+}
+
+
+/*Arrows Styling*/
+.arrows{
+    position: absolute;
+    top: 77%;
+    right: 18%;
+    width: 350px;
+    max-width: 30%;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    z-index: 100;
+}
+.arrows button{
+    width: 50px;
+    height: 50px;
+    color: white;
+    border: none;
+    background-color: rgba(85,85,85,0.65);
+    border-radius: 50%;
+    font-family: monospace;
+    font-size: large;
+    font-weight: bold;
+    transition: .5s;
+}
+.arrows button:hover{
+    background-color: white;
+    color: #555;
+}
+
+
+/* Animation Effects */
+.carousel .list .item:first-child{
+    z-index: 0;
+}
+
+.carousel .list .item:first-child .heading,
+.carousel .list .item:first-child .movie,
+.carousel .list .item:first-child .sign,
+.carousel .list .item:first-child .content,
+.carousel .list .item:first-child .buttons{
+    transform: translateY(50px);
+    opacity: 0;
+    filter: blur(15px);
+    animation: showDec 1s linear 1s 1 forwards;
+}
+
+@keyframes showDec {
+    to{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+.carousel .list .item:first-child .sign{ animation-delay: 1.1s;}
+.carousel .list .item:first-child .heading{ animation-delay: 1.2s;}
+.carousel .list .item:first-child .movie{ animation-delay: 1.4s;}
+.carousel .list .item:first-child .content{ animation-delay: 1.6s;}
+.carousel .list .item:first-child .buttons{ animation-delay: 1.8s;}
+
+/* Next Slide */
+/* Assigning Next button Action to Carousel Class*/
+.carousel.next .list .item:last-child img{
+    position: absolute;
+    bottom: 5rem;
+    left: 33rem;
+    width: 9rem;
+    height: 12rem;
+    border-radius: 8px;
+    animation: nextImg 1s linear 1 forwards;
+}
+@keyframes nextImg{
+    to{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+}
+
+.carousel.next + .thumbnail .item:first-child{
+    width: 0;
+    overflow: hidden;
+    animation: nextThumb 1s linear 1 forwards;
+}
+@keyframes nextThumb{
+    to{
+        width: 9rem;
+    }
+}
+
+
+
+/*Previous Slide*/
+/*Assigning prev button action to Carousel Class*/
+.carousel.prev .list .item:first-child img{
+    animation: nextImg 1s linear 1 forwards;
+}
+@keyframes nextImg{
+    to{
+        position: absolute;
+        bottom: 5rem;
+        left: 33rem;
+        width: 9rem;
+        height: 12rem;
+        border-radius: 8px;
+    }
+}
